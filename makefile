@@ -5,13 +5,13 @@ all:makeBankLibary BankEXE
 
 makeBankLibary:bankLibary.a
 
-bankLibary.a:Bank.o Bank.h
-	ar rcs bankLibary.a Bank.o Bank.h
+bankLibary.a:myBank.o myBank.h
+	ar rcs bankLibary.a myBank.o myBank.h
 
-Bank.o:Bank.c Bank.h
-	$(CC) $(FLAGS) -fPIC -c Bank.c
+myBank.o:myBank.c myBank.h
+	$(CC) $(FLAGS) -fPIC -c myBank.c
 
-main.o:main.c Bank.h
+main.o:main.c myBank.h
 	$(CC) $(FLAGS) -c main.c
 
 BankEXE:main.o bankLibary.a
